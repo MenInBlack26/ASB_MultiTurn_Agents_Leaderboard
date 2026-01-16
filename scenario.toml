@@ -1,37 +1,38 @@
 [green_agent]
 agentbeats_id = "019bc5b7-6af7-7a00-992a-990bff2704eb"
 image = "ghcr.io/meninblack26/asb_multiturn_agents/green-agent:latest"
-env = { 
-    LLM_BASE_URL="https://generativelanguage.googleapis.com/v1beta/openai/",
-    LLM_API_KEY="",
-    LLM_MODEL_NAME="${GITHUB_SECRET_NAME}",
-    GREEN_AGENT_HOST="0.0.0.0",
-    GREEN_AGENT_PORT=9009,
-    PURPLE_AGENT_HOST="0.0.0.0",
-    PURPLE_AGENT_PORT=9010,
+[green_agent.env]
+    LLM_BASE_URL="https://generativelanguage.googleapis.com/v1beta/openai/"
+    LLM_API_KEY = "${LLM_API_KEY}"
+    LLM_MODEL_NAME="${GITHUB_SECRET_NAME}"
+    GREEN_AGENT_HOST="0.0.0.0"
+    GREEN_AGENT_PORT=9009
+    PURPLE_AGENT_HOST="0.0.0.0"
+    PURPLE_AGENT_PORT=9010
 
     # Dataset Configuration
-    DATASET_PATH="./data_repo/data",
-    MAX_TEST_CASES=9999,
+    DATASET_PATH="./data_repo/data"
+    MAX_TEST_CASES=9999
 
     # Attack Configuration - ALL ATTACKS for submission
-    ATTACK_METHOD="all",
-    ATTACK_SUB_TYPES="naive,fake_completion,escape_characters,context_ignoring,combined_attack",
-    ATTACK_TOOL_FILTER="all",
+    ATTACK_METHOD="all"
+    ATTACK_SUB_TYPES="naive,fake_completion,escape_characters,context_ignoring,combined_attack"
+    ATTACK_TOOL_FILTER="all"
 
     # Logging
-    LOG_DIR="logs",
-    }
+    LOG_DIR="logs"
+
+
 
 [[participants]]
-agentbeats_id = ""
-name = "role_1_name"
-env = {}
+agentbeats_id = "019bc5c5-7806-7530-8941-ede4f2f2c1ab"
+image = "ghcr.io/meninblack26/asb_multiturn_agents/purple-agent:latest"
+name = "purple"
+env = { LLM_BASE_URL = "${LLM_BASE_URL}", LLM_API_KEY = "${LLM_API_KEY}", LLM_MODEL_NAME = "${LLM_MODEL_NAME}", LOG_LEVEL = "INFO" }
 
-[[participants]]
-agentbeats_id = ""
-name = "role_2_name"
-env = {}
 
 [config]
 # Add your assessment config here
+attack_method = "all"  # Options: observation_prompt_injection, direct_prompt_injection, pot_backdoor, memory_attack, all
+attack_sub_types = "naive,fake_completion,escape_characters,context_ignoring,combined_attack"
+max_cases = 9999  # Use all available test cases
