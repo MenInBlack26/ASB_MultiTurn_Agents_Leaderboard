@@ -4,7 +4,7 @@ image = "ghcr.io/meninblack26/asb_multiturn_agents/green-agent:latest"
 [green_agent.env]
     LLM_BASE_URL="https://generativelanguage.googleapis.com/v1beta/openai/"
     LLM_API_KEY = "${LLM_API_KEY}"
-    LLM_MODEL_NAME="${GITHUB_SECRET_NAME}"
+    LLM_MODEL_NAME="${LLM_MODEL_NAME}"
     GREEN_AGENT_HOST="0.0.0.0"
     GREEN_AGENT_PORT=9009
     PURPLE_AGENT_HOST="0.0.0.0"
