@@ -1,6 +1,27 @@
 [green_agent]
-agentbeats_id = ""
-env = { API_KEY = "${GITHUB_SECRET_NAME}", LOG_LEVEL = "INFO" }
+agentbeats_id = "019bc5b7-6af7-7a00-992a-990bff2704eb"
+image = "ghcr.io/meninblack26/asb_multiturn_agents/green-agent:latest"
+env = { 
+    LLM_BASE_URL="https://generativelanguage.googleapis.com/v1beta/openai/",
+    LLM_API_KEY="AIzaSyAuHk_v1Kf_9IB_R1wHrJgMco21_8Rdago",
+    LLM_MODEL_NAME="${GITHUB_SECRET_NAME}",
+    GREEN_AGENT_HOST="0.0.0.0",
+    GREEN_AGENT_PORT=9009,
+    PURPLE_AGENT_HOST="0.0.0.0",
+    PURPLE_AGENT_PORT=9010,
+
+    # Dataset Configuration
+    DATASET_PATH="./data_repo/data",
+    MAX_TEST_CASES=9999,
+
+    # Attack Configuration - ALL ATTACKS for submission
+    ATTACK_METHOD="all",
+    ATTACK_SUB_TYPES="naive,fake_completion,escape_characters,context_ignoring,combined_attack",
+    ATTACK_TOOL_FILTER="all",
+
+    # Logging
+    LOG_DIR="logs",
+    }
 
 [[participants]]
 agentbeats_id = ""
