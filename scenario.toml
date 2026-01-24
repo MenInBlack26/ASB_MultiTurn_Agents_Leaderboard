@@ -12,7 +12,7 @@ agentbeats_id = "019bc5b7-6af7-7a00-992a-990bff2704eb"
 
     # Dataset Configuration
     DATASET_PATH="./data_repo/data"
-    MAX_TEST_CASES=9999
+    MAX_TEST_CASES=2
 
     # Attack Configuration - ALL ATTACKS for submission
     ATTACK_METHOD="all"
@@ -35,4 +35,4 @@ env = { LLM_BASE_URL = "${LLM_BASE_URL}", LLM_API_KEY = "${LLM_API_KEY}", LLM_MO
 # Add your assessment config here
 attack_method = "all"  # Options: observation_prompt_injection, direct_prompt_injection, pot_backdoor, memory_attack, all
 attack_sub_types = "naive,fake_completion,escape_characters,context_ignoring,combined_attack"
-max_cases = 5  # Use all available test cases
+max_cases = 2 # Use all available test cases
