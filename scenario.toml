@@ -33,6 +33,6 @@ env = { LLM_BASE_URL = "${LLM_BASE_URL}", LLM_API_KEY = "${LLM_API_KEY}", LLM_MO
 
 [config]
 # Add your assessment config here
-attack_method = "all"  # Options: observation_prompt_injection, direct_prompt_injection, pot_backdoor, memory_attack, all
+attack_method = "all"  # Options: observation_prompt_injection,   direct_prompt_injection, pot_backdoor, memory_attack, all
 attack_sub_types = "naive,fake_completion,escape_characters,context_ignoring,combined_attack"
 max_cases = 2  # Use all available test cases
