@@ -1,10 +1,10 @@
 [green_agent]
 agentbeats_id = "019bc5b7-6af7-7a00-992a-990bff2704eb"
-image = "ghcr.io/meninblack26/asb_multiturn_agents/green-agent:latest"
+# image = "ghcr.io/meninblack26/asb_multiturn_agents/green-agent:latest"
 [green_agent.env]
     LLM_BASE_URL="https://generativelanguage.googleapis.com/v1beta/openai/"
     LLM_API_KEY = "${LLM_API_KEY}"
-    LLM_MODEL_NAME="${GITHUB_SECRET_NAME}"
+    LLM_MODEL_NAME="${LLM_MODEL_NAME}"
     GREEN_AGENT_HOST="0.0.0.0"
     GREEN_AGENT_PORT=9009
     PURPLE_AGENT_HOST="0.0.0.0"
@@ -26,7 +26,7 @@ image = "ghcr.io/meninblack26/asb_multiturn_agents/green-agent:latest"
 
 [[participants]]
 agentbeats_id = "019bc5c5-7806-7530-8941-ede4f2f2c1ab"
-image = "ghcr.io/meninblack26/asb_multiturn_agents/purple-agent:latest"
+# image = "ghcr.io/meninblack26/asb_multiturn_agents/epurple-agent:latest"
 name = "purple"
 env = { LLM_BASE_URL = "${LLM_BASE_URL}", LLM_API_KEY = "${LLM_API_KEY}", LLM_MODEL_NAME = "${LLM_MODEL_NAME}", LOG_LEVEL = "INFO" }
 
